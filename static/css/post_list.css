@@ -262,10 +262,6 @@ form p select:active {
   overflow-wrap: anywhere;
 }
 
-.post-content-div p {
-  font-family: inherit;
-}
-
 .admin-button-green,
 .admin-button-red {
   height: 50px;

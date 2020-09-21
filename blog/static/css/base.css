@@ -409,7 +409,7 @@ form p select:active {
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 500px) {
   .blog-posts {
     width: 90%;
   }

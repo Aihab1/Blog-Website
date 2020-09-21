@@ -409,9 +409,127 @@ form p select:active {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 320px) {
   .blog-posts {
     width: 90%;
   }
 }
-/*# sourceMappingURL=base.css.map */
+
+.post {
+  overflow-wrap: anywhere;
+  width: 300px;
+  height: 300px;
+  padding: 15px;
+  margin: 20px 10px;
+  background: linear-gradient(25deg, #00b49d, #007563, #012523);
+  -webkit-box-shadow: 0 1px 16px black;
+          box-shadow: 0 1px 16px black;
+  opacity: 0.8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  overflow: hidden;
+}
+
+.post:hover {
+  -webkit-box-shadow: 0 1px 16px #011514;
+          box-shadow: 0 1px 16px #011514;
+  opacity: 0.9;
+}
+
+.posts-container {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.posts-container a {
+  text-decoration: none;
+  color: white;
+}
+
+.posts-container .counting {
+  color: #012523;
+}
+
+#relative-div {
+  position: relative;
+}
+
+#relative-div .click-link {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  padding: 15px;
+  margin: 20px 10px;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#relative-div .click-link:hover {
+  background: black;
+  opacity: 0.2;
+}
+
+.blog-outer {
+  background: #012523;
+}
+
+.post-title {
+  font-size: 2rem;
+  text-shadow: 1px 1px 2px #012523;
+}
+
+@media screen and (max-width: 400px) {
+  .post {
+    width: 250px;
+    height: auto;
+    min-height: 250px;
+    margin: 10px 0;
+    padding: 15px;
+  }
+  #relative-div .click-link {
+    width: 250px;
+    height: auto;
+    min-height: 250px;
+    margin: 10px 0;
+    padding: 0;
+  }
+  #links-only.clicked {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .post {
+    width: 100%;
+    height: auto;
+  }
+  #relative-div .click-link {
+    width: 100%;
+    height: auto;
+  }
+}
+/*# sourceMappingURL=post_list.e8b0fb10dbdc.css.map */
