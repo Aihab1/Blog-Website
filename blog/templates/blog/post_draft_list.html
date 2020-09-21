@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+{% block my_header %}
+<link rel="stylesheet" href="{% static 'css/post_list.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="posts-container">
+    {% for post in post_list %}
+    <div id="relative-div">
+        <div class="post">
+            <div class="date">
+                <p>Created on {{ post.create_date|date:'F d, Y' }}</p>
+            </div>
+            <div class="heaaading">
+                <p class="post-title"><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></p>
+                <p>by {{ post.author }}</p>
+            </div>
+        </div>
+        <a class="click-link" href="{% url 'post_detail' pk=post.pk %}"></a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

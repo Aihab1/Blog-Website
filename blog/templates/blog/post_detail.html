@@ -1,0 +1,48 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="post-container">
+    <h1>{{post.title}}</h1>
+
+    {% if post.published_date %}
+    <div>
+        {{post.published_date}}
+    </div>
+    {% else %}
+    <div>
+        <a href="{% url 'post_publish' pk=post.pk %}" class="publish-button">Publish</a>
+    </div>
+    {% endif %}
+    <div class="post-content-div">
+        <p class="post-content">{{post.text|safe|linebreaks}}</p>
+        {% if user.is_authenticated %}
+        <div class="admin-buttons">
+            <a href="{% url 'post_edit' pk=post.pk %}" class="admin-button-green">EDIT</a>
+            <a href="{% url 'post_remove' pk=post.pk %}" class="admin-button-red">REMOVE</a>
+        </div>
+        {% endif %}
+    </div>
+    <h2>Comments</h2>
+    <div class="container">
+        {% for comment in post.comments.all %}
+            {% if user.is_authenticated or comment.approved_comment %}
+            <div class="post-content-div">
+                <h3>{{comment.author}}</h3>
+                <p class="creation-date">{{comment.create_date}}</p>
+                <p>{{comment.text|safe|linebreaks}}</p>
+                {% if not comment.approved_comment %}
+                <div class="admin-buttons">
+                    <a href="{% url 'comment_remove' pk=comment.pk %}" class="admin-button-red">REMOVE</a>
+                    <a href="{% url 'comment_approve' pk=comment.pk %}" class="admin-button-green">APPROVE</a>
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+            {% empty %}
+            <p>No comments.</p>
+        {% endfor %}
+    </div>
+    <a href="{% url 'add_comment_to_post' pk=post.pk %}" class='allposts-button'>Add a comment</a>
+</div>
+{% endblock %}

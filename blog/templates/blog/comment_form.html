@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="post-container">
+    <h1>New Comment</h1>
+    <form class="post-form" method="post" onsubmit="alert('Your message will be visible after getting approved by the admin!')">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Post Comment</button>
+    </form>
+</div>
+{% endblock %}

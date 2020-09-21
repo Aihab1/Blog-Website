@@ -1,0 +1,97 @@
+@import "base.scss";
+
+.post {
+  overflow-wrap: anywhere;
+  width: 300px;
+  height: 300px;
+  padding: 15px;
+  margin: 20px 10px;
+  background: linear-gradient(25deg, $light_t, $t, $dark_t);
+  box-shadow: 0 1px 16px black;
+  opacity: 0.8;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: left;
+  overflow: hidden;
+}
+.post:hover {
+  box-shadow: 0 1px 16px $background_color;
+  opacity: 0.9;
+}
+.posts-container {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap; 
+  align-items: center;
+  justify-content: center;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  .counting {
+    color: $dark_t;
+  }
+} 
+#relative-div {
+  position: relative;
+  .click-link {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    padding: 15px;
+    margin: 20px 10px;
+    background: transparent;
+    // opacity: 0.8;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .click-link:hover {
+    background: black;
+    opacity: 0.2;
+  }
+}
+.blog-outer {
+  background: $dark_t;
+}
+.post-title {
+  font-size: 2rem;
+  text-shadow: 1px 1px 2px $dark_t;
+}
+
+@media screen and (max-width: 400px){
+  .post{
+    width: 250px;
+    height: auto;
+    min-height: 250px;
+    margin: 10px 0;
+    padding: 15px;
+  }
+  #relative-div{
+    .click-link{
+      width: 250px;
+      height: auto;
+      min-height: 250px;
+      margin: 10px 0;
+      padding: 0; 
+    }
+  }
+  
+  #links-only.clicked {
+    right: 0;
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 300px){
+  .post{
+    width: 100%;
+    height: auto;
+  }
+  #relative-div{
+    .click-link{
+      width: 100%;
+      height: auto;
+    }
+  }
+}

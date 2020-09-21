@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta name="theme-color" content="#012523" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title_block %}
+        {% endblock %}
+    </title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block my_header %}
+    {% endblock %}
+</head>
+
+<body>
+    <div id="navbar">
+        <ul class="nav-links smart-scroll">
+            <!-- LOGO -->
+            <a href="{% url 'about' %}" class="logo">
+                <li>
+                    <svg height="30" id="logo" viewBox="0 0 244 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_i)">
+                            <path
+                                d="M1.336 102C0.952 102 0.76 101.76 0.76 101.28L1.048 2.352C1.048 1.96799 1.24 1.77599 1.624 1.77599H29.272C34.744 1.77599 39.64 3.11999 43.96 5.80799C48.28 8.39999 51.688 11.856 54.184 16.176C56.68 20.496 57.928 25.2 57.928 30.288C57.928 34.416 56.968 38.256 55.048 41.808C53.224 45.36 51.016 48.24 48.424 50.448C51.208 53.232 53.368 56.448 54.904 60.096C56.44 63.744 57.208 67.584 57.208 71.616C57.208 77.184 55.864 82.272 53.176 86.88C50.488 91.488 46.84 95.184 42.232 97.968C37.72 100.656 32.68 102 27.112 102H1.336ZM18.328 41.52H29.272C32.632 41.52 35.32 40.368 37.336 38.064C39.448 35.664 40.504 33.072 40.504 30.288C40.504 27.216 39.4 24.576 37.192 22.368C34.984 20.064 32.344 18.912 29.272 18.912H18.328V41.52ZM18.184 84.432H27.112C30.568 84.432 33.544 83.184 36.04 80.688C38.536 78.096 39.784 75.072 39.784 71.616C39.784 68.16 38.536 65.184 36.04 62.688C33.544 60.192 30.568 58.944 27.112 58.944H18.328L18.184 84.432ZM68.1329 102C67.7489 102 67.5569 101.76 67.5569 101.28L67.7009 2.49599C67.7009 2.01599 67.9409 1.77599 68.4209 1.77599H84.4049C84.8849 1.77599 85.1249 2.01599 85.1249 2.49599L84.9809 84.288H114.645C115.125 84.288 115.365 84.528 115.365 85.008V101.28C115.365 101.76 115.125 102 114.645 102H68.1329ZM149.463 103.44C144.279 103.44 139.527 102.144 135.207 99.552C130.983 96.864 127.575 93.36 124.983 89.04C122.391 84.624 121.095 79.776 121.095 74.496L121.239 28.848C121.239 23.568 122.487 18.768 124.983 14.448C127.575 10.128 131.031 6.67199 135.351 4.08C139.671 1.488 144.375 0.191998 149.463 0.191998C154.647 0.191998 159.351 1.488 163.575 4.08C167.799 6.67199 171.159 10.128 173.655 14.448C176.247 18.768 177.543 23.568 177.543 28.848L177.687 74.496C177.687 79.776 176.391 84.624 173.799 89.04C171.303 93.36 167.895 96.864 163.575 99.552C159.351 102.144 154.647 103.44 149.463 103.44ZM149.463 86.016C152.343 86.016 154.839 84.864 156.951 82.56C159.159 80.16 160.263 77.472 160.263 74.496L160.119 28.848C160.119 25.68 159.111 22.992 157.095 20.784C155.079 18.576 152.535 17.472 149.463 17.472C146.487 17.472 143.943 18.576 141.831 20.784C139.719 22.896 138.663 25.584 138.663 28.848V74.496C138.663 77.664 139.719 80.4 141.831 82.704C143.943 84.912 146.487 86.016 149.463 86.016ZM214.987 103.44C209.803 103.44 205.099 102.144 200.875 99.552C196.651 96.96 193.243 93.504 190.651 89.184C188.155 84.768 186.907 79.872 186.907 74.496V28.848C186.907 23.664 188.155 18.912 190.651 14.592C193.243 10.176 196.651 6.67199 200.875 4.08C205.195 1.488 209.899 0.191998 214.987 0.191998C220.267 0.191998 225.019 1.488 229.243 4.08C233.563 6.576 236.971 9.98399 239.467 14.304C241.963 18.624 243.211 23.472 243.211 28.848V35.472C243.211 35.856 242.971 36.048 242.491 36.048H226.363C225.979 36.048 225.787 35.856 225.787 35.472V30C225.787 26.352 224.731 23.328 222.619 20.928C220.603 18.528 218.059 17.328 214.987 17.328C212.203 17.328 209.707 18.48 207.499 20.784C205.387 23.088 204.331 25.776 204.331 28.848V74.496C204.331 77.664 205.387 80.4 207.499 82.704C209.611 84.912 212.107 86.016 214.987 86.016C218.059 86.016 220.603 84.912 222.619 82.704C224.731 80.496 225.787 77.76 225.787 74.496V67.44H215.707C215.227 67.44 214.987 67.2 214.987 66.72V50.592C214.987 50.112 215.227 49.872 215.707 49.872H242.635C243.019 49.872 243.211 50.112 243.211 50.592V74.496C243.211 79.872 241.915 84.768 239.323 89.184C236.827 93.504 233.467 96.96 229.243 99.552C225.019 102.144 220.267 103.44 214.987 103.44Z"
+                                fill="#00B49D" />
+                        </g>
+                        <defs>
+                            <filter id="filter0_i" x="0.760002" y="0.192001" width="242.451" height="107.248"
+                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dy="4" />
+                                <feGaussianBlur stdDeviation="2" />
+                                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                <feBlend mode="normal" in2="shape" result="effect1_innerShadow" />
+                            </filter>
+                        </defs>
+                    </svg>
+                </li>
+            </a>
+            <!-- LOGO end -->
+            <div id="links-only">
+                <li><a href="{% url 'post_list' %}" class='nav-link'>All Posts</a></li>
+                {% if user.is_authenticated %}
+                <li class="welcome">Welcome {{user.username}}</li>
+                <li><a class="nav-link" href="{% url 'post_new' %}">New Post</a></li>
+                <li><a class="nav-link" href="{% url 'post_draft_list' %}">Drafts</a></li>
+                <li><a class="nav-link" href="{% url 'logout' %}">Log out</a></li>
+                {% else %}
+                <li class="welcome"><a href="http://aihab.codes" target="_blank">Portfolio</a></li>
+                <li><a class="nav-link" href="{% url 'login' %}">Log in</a></li>
+                {% endif %}
+            </div>
+            <div class="hamburger-outer">
+                <div class="hamburger hamburger1"></div>
+                <div class="hamburger hamburger2"></div>
+                <div class="hamburger hamburger3"></div>
+            </div>
+        </ul>
+    </div>
+    <div id="outer-main">
+        {% block body_start %}
+        {% endblock %}
+        <div class="blog-outer">
+            <div class="blog-posts">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+<script src="{% static 'js/script.js' %}"></script>
+
+</html>
