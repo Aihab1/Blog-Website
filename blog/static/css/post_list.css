@@ -128,7 +128,7 @@ h3 {
 }
 
 .blog-outer {
-  background: #e6f1ff;
+  background: #effffc;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -161,7 +161,9 @@ h3 {
 }
 
 form button {
-  border: 1px solid #a8b2d1;
+  border: none;
+  -webkit-box-shadow: 0 1px 15px #c7d1dd;
+          box-shadow: 0 1px 15px #c7d1dd;
   outline: none;
   width: 300px;
   height: 40px;
@@ -230,7 +232,9 @@ form p select:active {
   transition: all 0.4s ease;
   text-decoration: none;
   margin-top: 40px;
-  border: 1px solid #a8b2d1;
+  border: none;
+  -webkit-box-shadow: 0 1px 15px #c7d1dd;
+          box-shadow: 0 1px 15px #c7d1dd;
   outline: none;
   width: 300px;
   height: 40px;
@@ -254,11 +258,11 @@ form p select:active {
 }
 
 .post-content-div {
-  margin: 20px 0;
+  margin: 25px 0;
   padding: 20px;
   background: white;
-  -webkit-box-shadow: 0 1px 10px lightgray;
-          box-shadow: 0 1px 10px lightgray;
+  -webkit-box-shadow: 0 1px 15px #c7d1dd;
+          box-shadow: 0 1px 15px #c7d1dd;
   overflow-wrap: anywhere;
 }
 
