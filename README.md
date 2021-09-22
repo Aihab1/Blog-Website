@@ -1,7 +1,20 @@
-# Personal Blog
-**Django | HTML | SCSS | JS**
+<h1 align="center">
+  <a href="https://aihablog.herokuapp.com/">Personal Blog</a>
+</h1>
 
-Free to use Personal Blog Website (template) created by me.
+<p align="center">
+  This is a free to use personal blog website template created by me.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=darkgreen" />
+  <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
+</p>
+
+![Screenshot_6](https://user-images.githubusercontent.com/55903466/94116998-52a83d00-fe69-11ea-90c1-e1d4881da38f.jpg)
 
 ## Features:
 - Blog posts as well as comments support images, emoticons, external links, styling etc.
@@ -13,7 +26,6 @@ Free to use Personal Blog Website (template) created by me.
 ## Find images below:
 
 ![Screenshot_1](https://user-images.githubusercontent.com/55903466/94116991-50de7980-fe69-11ea-8c78-f3455a620f61.jpg)
-![Screenshot_6](https://user-images.githubusercontent.com/55903466/94116998-52a83d00-fe69-11ea-90c1-e1d4881da38f.jpg)
 ![Screenshot_4](https://user-images.githubusercontent.com/55903466/94117003-550a9700-fe69-11ea-877b-e0b5f048f4d4.jpg)
 ![Screenshot_3](https://user-images.githubusercontent.com/55903466/94116999-53d96a00-fe69-11ea-8bf9-62ffe3e8d69b.jpg)
 ![Screenshot_5](https://user-images.githubusercontent.com/55903466/94117013-59cf4b00-fe69-11ea-8401-450f87642711.jpg)
